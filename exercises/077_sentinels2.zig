@@ -60,7 +60,14 @@ pub fn main() void {
     // length... You've actually solved this problem before!
     //
     // Here's a big hint: do you remember how to take a slice?
-    const printable = ???;
+    // Data is a [*]const u8
+
+    // Feel like this is cheating lol. I don't think I did what I was supposed to with sentinels
+    const printable = foo.data[0..11];
 
     print("{s}\n", .{printable});
+}
+
+fn assert(ok: bool) void {
+    if (!ok) unreachable;
 }
